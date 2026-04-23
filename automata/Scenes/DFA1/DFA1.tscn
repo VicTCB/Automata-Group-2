@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d3skfke0cda76"]
+
+[node name="DFA1" type="Node3D" unique_id=303588228]
+
+[node name="SimulationCamera" type="Camera3D" parent="." unique_id=440494608]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 60, 0)
+
+[node name="FlatBoard" type="CSGBox3D" parent="." unique_id=650923072]
+size = Vector3(100, 1, 50)
