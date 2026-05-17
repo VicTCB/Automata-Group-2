@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://3yytfsd5cg5j"]
+
+[ext_resource type="PackedScene" uid="uid://crpm8k7iv256a" path="res://Scenes/Player/User.tscn" id="1_b8iws"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsrhs"]
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8iws"]
+albedo_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uic7p"]
+albedo_color = Color(0.39215687, 0.5921569, 0.69411767, 1)
+
+[node name="CommandRoom" type="Node3D" unique_id=581454864]
+
+[node name="ControlRoomModel" type="CSGCombiner3D" parent="." unique_id=383816427]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ControlRoomModel" unique_id=680366031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.007966, 0)
+size = Vector3(15, 10, 15)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ControlRoomModel" unique_id=876401415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.063131, -0.31323242)
+operation = 2
+size = Vector3(14.5, 9.5, 15.126465)
+
+[node name="Table" type="CSGCombiner3D" parent="." unique_id=2140844231]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table" unique_id=1208046267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023475409, 0.73319674, 5.3554907)
+size = Vector3(12.301514, 1, 3.0054321)
+material = SubResource("StandardMaterial3D_tsrhs")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table" unique_id=1275029114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019986153, 2.0139883, 6.397883)
+size = Vector3(12.291779, 2.5125732, 1)
+material = SubResource("StandardMaterial3D_tsrhs")
+
+[node name="GiantScreen" type="CSGCombiner3D" parent="." unique_id=1493096856]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="GiantScreen" unique_id=1671712109]
+transform = Transform3D(11.763569, 0, 0, 0, 3.5882688, 0, 0, 0, 1, 0, 6.4942102, 7.0723295)
+size = Vector3(1, 1.383667, 0.4711914)
+material = SubResource("StandardMaterial3D_b8iws")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="GiantScreen" unique_id=1987428742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.261002, 4.1155996, -0.5671766)
+size = Vector3(0.37402344, 4.8808594, 7.4815063)
+material = SubResource("StandardMaterial3D_uic7p")
+
+[node name="User" parent="." unique_id=1947249384 instance=ExtResource("1_b8iws")]
+transform = Transform3D(-0.9806454, 0, 0.195792, 0, 1, 0, -0.195792, 0, -0.9806454, 0, 1.4330149, 0)
