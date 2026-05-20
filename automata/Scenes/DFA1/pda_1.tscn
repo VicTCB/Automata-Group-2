@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bjl8k20wsjk0s"]
+
+[ext_resource type="Texture2D" uid="uid://ceh4i120fis1h" path="res://Assets/2D/DFA1/placeholderPDA1.png" id="1_56fvh"]
+[ext_resource type="Script" uid="uid://d0tetdwskxo5c" path="res://Scripts/DFA1/pda_1.gd" id="2_kjxci"]
+[ext_resource type="PackedScene" uid="uid://cc8045aqvctug" path="res://Scenes/Others/back.tscn" id="2_xy8ym"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xy8ym"]
+texture = ExtResource("1_56fvh")
+
+[node name="PDA1" type="Panel" unique_id=1764836357]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xy8ym")
+script = ExtResource("2_kjxci")
+
+[node name="Back" parent="." unique_id=1981862376 instance=ExtResource("2_xy8ym")]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.84700006
+anchor_right = 0.5
+anchor_bottom = 0.84700006
+offset_left = -152.0
+offset_top = -74.76007
+offset_right = 148.0
+offset_bottom = 75.23993
+grow_horizontal = 1
+grow_vertical = 1

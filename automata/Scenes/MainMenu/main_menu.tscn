@@ -1,5 +1,55 @@
 [gd_scene format=3 uid="uid://bpjtbd8tlgn4e"]
 
+[ext_resource type="Texture2D" uid="uid://h8601gxjgm3c" path="res://Assets/2D/MainMenu/placeholderMainMenu.png" id="1_uqdog"]
+[ext_resource type="Script" uid="uid://ollpvcupnggb" path="res://Scripts/MainMenu/main_menu.gd" id="2_0qgbs"]
+[ext_resource type="Texture2D" uid="uid://61mha7q2hc8n" path="res://Assets/2D/MainMenu/placeholderPlay.png" id="2_v763k"]
+[ext_resource type="Texture2D" uid="uid://hbbcsolf5dms" path="res://Assets/2D/MainMenu/placeholderExit.png" id="3_qgdf6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v763k"]
+texture = ExtResource("1_uqdog")
+
 [node name="MainMenuBG" type="Panel" unique_id=302614901]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_v763k")
+script = ExtResource("2_0qgbs")
+
+[node name="BoardStation" type="TextureButton" parent="." unique_id=785721556]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.77783
+offset_top = -86.5
+offset_right = 153.77783
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_v763k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SignOff" type="TextureButton" parent="." unique_id=604549798]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.74200004
+anchor_right = 0.5
+anchor_bottom = 0.74200004
+offset_left = -154.0
+offset_top = -88.36005
+offset_right = 158.88892
+offset_bottom = 87.63995
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_qgdf6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="BoardStation" to="." method="_on_board_station_pressed"]
+[connection signal="pressed" from="SignOff" to="." method="_on_sign_off_pressed"]

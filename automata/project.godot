@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Automata"
-run/main_scene="uid://3yytfsd5cg5j"
+run/main_scene="uid://bpjtbd8tlgn4e"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://byc0wti1edvke"
 
 [display]
 
@@ -21,6 +25,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
 window/size/borderless=true
+
+[global_group]
+
+interactable=""
 
 [input]
 

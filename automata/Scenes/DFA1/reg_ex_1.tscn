@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cws0bd3vlpgyg"]
+
+[ext_resource type="Texture2D" uid="uid://w1wf7igqo1ji" path="res://Assets/2D/DFA1/placeholderRegEx1.png" id="1_vl8gn"]
+[ext_resource type="Script" uid="uid://doebako4afyvp" path="res://Scripts/DFA1/reg_ex_1.gd" id="2_87k1f"]
+[ext_resource type="PackedScene" uid="uid://cc8045aqvctug" path="res://Scenes/Others/back.tscn" id="2_mwnme"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mwnme"]
+texture = ExtResource("1_vl8gn")
+
+[node name="RegEx1" type="Panel" unique_id=914070162]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mwnme")
+script = ExtResource("2_87k1f")
+
+[node name="Back" parent="." unique_id=1981862376 instance=ExtResource("2_mwnme")]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.85200006
+anchor_right = 0.5
+anchor_bottom = 0.85200006
+offset_left = -149.0
+offset_top = -75.160034
+offset_right = 151.0
+offset_bottom = 74.839966
+grow_horizontal = 1
+grow_vertical = 1

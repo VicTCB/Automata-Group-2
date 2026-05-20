@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dbrkt3pfc4d3q"]
+
+[ext_resource type="Texture2D" uid="uid://b0w71nq12u226" path="res://Assets/2D/Monitor2/placeholderSecondMonitor.png" id="1_rp8s1"]
+[ext_resource type="Texture2D" uid="uid://d1d0g17cl2ftn" path="res://Assets/2D/Monitor2/placeholderShowPDA.png" id="2_4ln5h"]
+[ext_resource type="Script" uid="uid://cnsjfh6na3k8m" path="res://Scripts/Others/Monitor2/monitor2.gd" id="2_036g0"]
+[ext_resource type="Texture2D" uid="uid://dfsr61pxnj8u6" path="res://Assets/2D/Monitor2/placeholderShowCFG.png" id="3_dxwg2"]
+[ext_resource type="Texture2D" uid="uid://c47y1peinnpk7" path="res://Assets/2D/Monitor2/placeholderShowRegEx.png" id="4_dxwg2"]
+[ext_resource type="PackedScene" uid="uid://cc8045aqvctug" path="res://Scenes/Others/back.tscn" id="5_kela8"]
+[ext_resource type="PackedScene" uid="uid://3yytfsd5cg5j" path="res://Scenes/ControlRoom/command_room.tscn" id="7_exlko"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgjnd"]
+texture = ExtResource("1_rp8s1")
+
+[node name="Monitor2" type="Panel" unique_id=48405234]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kgjnd")
+script = ExtResource("2_036g0")
+
+[node name="ShowPDA" type="TextureButton" parent="." unique_id=674910020]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.40500003
+anchor_right = 0.5
+anchor_bottom = 0.40500003
+offset_left = -167.0
+offset_top = -96.400024
+offset_right = 174.33337
+offset_bottom = 95.599976
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_4ln5h")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ShowCFG" type="TextureButton" parent="." unique_id=1453565121]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.624
+anchor_right = 0.50200003
+anchor_bottom = 0.624
+offset_left = -170.84009
+offset_top = -96.920044
+offset_right = 172.27112
+offset_bottom = 96.079956
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_dxwg2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ShowRegEx" type="TextureButton" parent="." unique_id=2011660755]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.82600003
+anchor_right = 0.503
+anchor_bottom = 0.82600003
+offset_left = -173.76001
+offset_top = -99.08002
+offset_right = 172.90674
+offset_bottom = 95.91998
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_dxwg2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Back" parent="." unique_id=1981862376 instance=ExtResource("5_kela8")]
+layout_mode = 1
+anchor_left = 0.165
+anchor_top = 0.82900006
+anchor_right = 0.165
+anchor_bottom = 0.82900006
+offset_left = -150.56003
+offset_top = -74.84009
+offset_right = 149.43997
+offset_bottom = 75.15991
+grow_horizontal = 1
+grow_vertical = 1
+previous_scene = ExtResource("7_exlko")
+
+[connection signal="pressed" from="ShowPDA" to="." method="_on_show_pda_pressed"]
+[connection signal="pressed" from="ShowCFG" to="." method="_on_show_cfg_pressed"]
+[connection signal="pressed" from="ShowRegEx" to="." method="_on_show_reg_ex_pressed"]

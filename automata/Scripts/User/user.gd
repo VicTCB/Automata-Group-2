@@ -10,6 +10,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
@@ -37,9 +39,8 @@ func _physics_process(delta):
 
 func try_interact():
 	if interact_ray.is_colliding():
-		var target = interact_ray.get_collider()
-		
+		var target = interact_ray.get_collider()   
 		if target.has_method("on_interact"):
 			target.on_interact()
-		else:
-			pass
+		elif target.get_parent().has_method("on_interact"):
+			target.get_parent().on_interact()

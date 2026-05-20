@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://6dfik4vhiyek"]
+
+[ext_resource type="Texture2D" uid="uid://bktgxlgf1ikor" path="res://Assets/2D/DFA2/placeholderPDA2.png" id="1_wan87"]
+[ext_resource type="Script" uid="uid://2i1b7ppga5mu" path="res://Scripts/DFA2/pda_2.gd" id="2_qmo16"]
+[ext_resource type="PackedScene" uid="uid://cc8045aqvctug" path="res://Scenes/Others/back.tscn" id="2_rtet6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtet6"]
+texture = ExtResource("1_wan87")
+
+[node name="PDA2" type="Panel" unique_id=537300542]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rtet6")
+script = ExtResource("2_qmo16")
+
+[node name="Back" parent="." unique_id=1981862376 instance=ExtResource("2_rtet6")]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.81700003
+anchor_right = 0.5
+anchor_bottom = 0.81700003
+offset_left = -148.0
+offset_top = -74.36005
+offset_right = 152.0
+offset_bottom = 75.63995
+grow_horizontal = 1
+grow_vertical = 1

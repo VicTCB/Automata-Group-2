@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3yytfsd5cg5j"]
 
 [ext_resource type="PackedScene" uid="uid://crpm8k7iv256a" path="res://Scenes/Player/User.tscn" id="1_b8iws"]
+[ext_resource type="Script" uid="uid://bu6n8kiada7aq" path="res://Scripts/ControlRoom/Monitor2/monitor2.gd" id="1_uic7p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsrhs"]
 albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
@@ -8,8 +9,16 @@ albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8iws"]
 albedo_color = Color(0, 0, 0, 0)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b8iws"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uic7p"]
-albedo_color = Color(0.39215687, 0.5921569, 0.69411767, 1)
+albedo_color = Color(0.7529412, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tqsu5"]
+material = SubResource("StandardMaterial3D_uic7p")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8iws"]
+size = Vector3(0.49609375, 4.998413, 6.9967957)
 
 [node name="CommandRoom" type="Node3D" unique_id=581454864]
 
@@ -46,10 +55,18 @@ transform = Transform3D(11.763569, 0, 0, 0, 3.5882688, 0, 0, 0, 1, 0, 6.4942102,
 size = Vector3(1, 1.383667, 0.4711914)
 material = SubResource("StandardMaterial3D_b8iws")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="GiantScreen" unique_id=1987428742]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.261002, 4.1155996, -0.5671766)
-size = Vector3(0.37402344, 4.8808594, 7.4815063)
-material = SubResource("StandardMaterial3D_uic7p")
-
 [node name="User" parent="." unique_id=1947249384 instance=ExtResource("1_b8iws")]
 transform = Transform3D(0.9269681, 0, 0.3751406, 0, 1, 0, -0.3751406, 0, 0.9269681, 0, 1.4330149, 0)
+
+[node name="Monitor2" type="StaticBody3D" parent="." unique_id=40610691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1669326, 3.6367178, 0)
+physics_material_override = SubResource("PhysicsMaterial_b8iws")
+script = ExtResource("1_uic7p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Monitor2" unique_id=1201350517]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 7, 0, 0, 0)
+mesh = SubResource("BoxMesh_tqsu5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor2" unique_id=5473313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0008454323, 0.0014038086, -0.0014190674)
+shape = SubResource("BoxShape3D_b8iws")
