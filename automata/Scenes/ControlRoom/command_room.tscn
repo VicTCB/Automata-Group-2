@@ -1,10 +1,43 @@
 [gd_scene format=3 uid="uid://3yytfsd5cg5j"]
 
 [ext_resource type="PackedScene" uid="uid://crpm8k7iv256a" path="res://Scenes/Player/User.tscn" id="1_b8iws"]
+[ext_resource type="Script" uid="uid://c2tyv78q8yn5g" path="res://Scripts/ControlRoom/ControlPanel/change_file.gd" id="1_tqsu5"]
 [ext_resource type="Script" uid="uid://bu6n8kiada7aq" path="res://Scripts/ControlRoom/Monitor2/monitor2.gd" id="1_uic7p"]
+[ext_resource type="Script" uid="uid://dju4y7fe61kdc" path="res://Scripts/ControlRoom/DisplayScreen/display_screen.gd" id="2_b0e1o"]
+[ext_resource type="Texture2D" uid="uid://bh6vmrlxym1ei" path="res://Assets/2D/DFA1/placeholderDFA1.png" id="2_gsh5y"]
+[ext_resource type="Texture2D" uid="uid://dxvcbtcopux84" path="res://Assets/2D/DFA2/placeholderDFA2.png" id="4_7shgx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsrhs"]
-albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7shgx"]
+albedo_color = Color(0.45490196, 0.5686275, 0.19215687, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qi2e7"]
+material = SubResource("StandardMaterial3D_7shgx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bohp4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b0e1o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gsh5y"]
+albedo_color = Color(0.84531957, 0.06615002, 0.19001892, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dp47i"]
+material = SubResource("StandardMaterial3D_gsh5y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqsu5"]
+albedo_color = Color(0.34167734, 0.41000238, 0.5056869, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gsh5y"]
+material = SubResource("StandardMaterial3D_tqsu5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dp47i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0e1o"]
+albedo_color = Color(0.34117648, 0.4117647, 0.5058824, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7shgx"]
+material = SubResource("StandardMaterial3D_b0e1o")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qi2e7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8iws"]
 albedo_color = Color(0, 0, 0, 0)
@@ -34,18 +67,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.063131, -0.31323242)
 operation = 2
 size = Vector3(14.5, 9.5, 15.126465)
 
-[node name="Table" type="CSGCombiner3D" parent="." unique_id=2140844231]
-use_collision = true
+[node name="EnterCoordinates" type="StaticBody3D" parent="." unique_id=1058343588]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 0.3, -2.2153058, 1.5193181, 4.429651)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Table" unique_id=1208046267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023475409, 0.73319674, 5.3554907)
-size = Vector3(12.301514, 1, 3.0054321)
-material = SubResource("StandardMaterial3D_tsrhs")
+[node name="CoordinateScreen" type="MeshInstance3D" parent="EnterCoordinates" unique_id=1115542780]
+mesh = SubResource("BoxMesh_qi2e7")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Table" unique_id=1275029114]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019986153, 2.0139883, 6.397883)
-size = Vector3(12.291779, 2.5125732, 1)
-material = SubResource("StandardMaterial3D_tsrhs")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnterCoordinates" unique_id=2084153896]
+shape = SubResource("BoxShape3D_bohp4")
+
+[node name="ChangeFile" type="StaticBody3D" parent="." unique_id=2089475652]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 3.6765695, 0.96724486, 4.5015135)
+script = ExtResource("1_tqsu5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeFile" unique_id=60435424]
+shape = SubResource("CapsuleShape3D_b0e1o")
+
+[node name="RedButton" type="MeshInstance3D" parent="ChangeFile" unique_id=1434881737]
+mesh = SubResource("CylinderMesh_dp47i")
+
+[node name="ControlPanel" type="StaticBody3D" parent="." unique_id=1258802742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8714612, 5.6396914)
+
+[node name="PanelBottom" type="MeshInstance3D" parent="ControlPanel" unique_id=1883161145]
+transform = Transform3D(12.262, 0, 0, 0, 0.7, 0, 0, 0, 3.632, 0, -1.1967983, -0.16832781)
+mesh = SubResource("BoxMesh_gsh5y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ControlPanel/PanelBottom" unique_id=1969786380]
+shape = SubResource("BoxShape3D_dp47i")
+
+[node name="PanelTop" type="MeshInstance3D" parent="ControlPanel" unique_id=175781921]
+transform = Transform3D(12.11614, 0, 0, 0, 1.8192735, 0, 0, 0, 0.61213183, 0.011775494, -0.01926732, 1.3097448)
+mesh = SubResource("BoxMesh_7shgx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ControlPanel/PanelTop" unique_id=578764407]
+shape = SubResource("BoxShape3D_qi2e7")
 
 [node name="GiantScreen" type="CSGCombiner3D" parent="." unique_id=1493096856]
 use_collision = true
@@ -55,8 +111,15 @@ transform = Transform3D(11.763569, 0, 0, 0, 3.5882688, 0, 0, 0, 1, 0, 6.4942102,
 size = Vector3(1, 1.383667, 0.4711914)
 material = SubResource("StandardMaterial3D_b8iws")
 
+[node name="DisplayScreen" type="Sprite3D" parent="GiantScreen" unique_id=1057260550 groups=["DisplayScreen"]]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 6.400118, 6.824342)
+script = ExtResource("2_b0e1o")
+dfa1_texture = ExtResource("2_gsh5y")
+dfa2_texture = ExtResource("4_7shgx")
+
 [node name="User" parent="." unique_id=1947249384 instance=ExtResource("1_b8iws")]
 transform = Transform3D(0.9269681, 0, 0.3751406, 0, 1, 0, -0.3751406, 0, 0.9269681, 0, 1.4330149, 0)
+visible = false
 
 [node name="Monitor2" type="StaticBody3D" parent="." unique_id=40610691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1669326, 3.6367178, 0)

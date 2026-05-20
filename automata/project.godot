@@ -29,6 +29,7 @@ window/size/borderless=true
 [global_group]
 
 interactable=""
+DisplayScreen=""
 
 [input]
 
