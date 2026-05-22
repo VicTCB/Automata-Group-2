@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b4dn236v1usb0"]
+
+[ext_resource type="Script" uid="uid://bvr34lhqgg7ci" path="res://Scripts/Others/enter_coordinates.gd" id="1_jw1c3"]
+[ext_resource type="PackedScene" uid="uid://cc8045aqvctug" path="res://Scenes/Others/back.tscn" id="2_ra7b4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n3cpu"]
+
+[node name="EnterCoordinates" type="Control" unique_id=611048570]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jw1c3")
+
+[node name="Panel" type="Panel" parent="." unique_id=1913554874]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n3cpu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=131575736]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -138.0
+offset_right = 169.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer" unique_id=14234469]
+layout_mode = 2
+text = "ENTER COORDINATES"
+horizontal_alignment = 1
+
+[node name="StringList" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=557085882]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="AddButton" type="Button" parent="Panel/VBoxContainer" unique_id=454881836]
+layout_mode = 2
+text = "+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1554946871]
+layout_mode = 2
+
+[node name="ReloadButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1304586978]
+layout_mode = 2
+text = "RESET COORDINATES"
+
+[node name="SimulateButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1109590850]
+layout_mode = 2
+text = "NAVIGATE"
+
+[node name="Back" parent="." unique_id=1981862376 instance=ExtResource("2_ra7b4")]
+layout_mode = 1
+offset_left = -111.76001
+offset_top = 812.48
+offset_right = 188.23999
+offset_bottom = 962.48
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/ReloadButton" to="." method="_on_reload_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/SimulateButton" to="." method="_on_simulate_button_pressed"]

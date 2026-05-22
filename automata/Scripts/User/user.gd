@@ -18,6 +18,8 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 
 func _physics_process(delta):
+	if Global.in_menu:
+		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
