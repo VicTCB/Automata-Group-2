@@ -50,8 +50,6 @@ albedo_color = Color(0.22745098, 1, 1, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_k8g5f"]
 material = SubResource("StandardMaterial3D_8b2yq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md273"]
-
 [node name="DFA2" type="Node3D" unique_id=303588228]
 script = ExtResource("1_ounok")
 
@@ -70,9 +68,15 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 3, 0)
 mesh = SubResource("SphereMesh_k8g5f")
 
+[node name="Label3D" type="Label3D" parent="SimEnvironment/StateNodes/Q0" unique_id=414144792]
+text = "Q0"
+
 [node name="Q1" type="MeshInstance3D" parent="SimEnvironment/StateNodes" unique_id=43351503]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3, -6)
 mesh = SubResource("SphereMesh_3qtr5")
+
+[node name="Label3D" type="Label3D" parent="SimEnvironment/StateNodes/Q1" unique_id=1646534943]
+text = "Q1"
 
 [node name="Q2" type="MeshInstance3D" parent="SimEnvironment/StateNodes" unique_id=1382618516]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3, -6)
@@ -109,14 +113,8 @@ mesh = SubResource("SphereMesh_q4gml")
 [node name="Rocket" type="Node3D" parent="SimEnvironment" unique_id=1785580816]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SimEnvironment/Rocket" unique_id=259140030]
-transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 0, 3, 0)
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -32, 3, 0)
 mesh = SubResource("CapsuleMesh_k8g5f")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SimEnvironment" unique_id=2056413757]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 101.377144, 0)
-
-[node name="Flatboard" type="CSGBox3D" parent="SimEnvironment" unique_id=444753979]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.390503, 0)
-visible = false
-size = Vector3(160, 1, 30)
-material = SubResource("StandardMaterial3D_md273")
