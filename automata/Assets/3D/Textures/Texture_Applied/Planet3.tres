@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://rm5nn1kn22uk"]
+
+[ext_resource type="Texture2D" uid="uid://c8225caypc50i" path="res://Assets/3D/Textures/Raw_Textures/PLanet3/Planet3_Planet_3_BaseColor.png" id="1_s0we4"]
+[ext_resource type="Texture2D" uid="uid://dup2adqbfcjyp" path="res://Assets/3D/Textures/Raw_Textures/PLanet3/Planet3_Planet_3_Roughness.png" id="2_x24cq"]
+
+[resource]
+blend_mode = 1
+albedo_texture = ExtResource("1_s0we4")
+roughness_texture = ExtResource("2_x24cq")

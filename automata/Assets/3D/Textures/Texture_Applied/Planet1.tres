@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dy8lhdenr5n46"]
+
+[ext_resource type="Texture2D" uid="uid://b4bi4jrudqp78" path="res://Assets/3D/Textures/Raw_Textures/PLanet1/Planet1_standardSurface11_BaseColor.png" id="1_tk8db"]
+[ext_resource type="Texture2D" uid="uid://8jc5guqcaxud" path="res://Assets/3D/Textures/Raw_Textures/PLanet1/Planet1_standardSurface11_Roughness.png" id="2_70vsl"]
+
+[resource]
+albedo_texture = ExtResource("1_tk8db")
+roughness_texture = ExtResource("2_70vsl")

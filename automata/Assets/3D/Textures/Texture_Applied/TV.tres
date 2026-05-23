@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tr02evmc4ke7"]
+
+[ext_resource type="Texture2D" uid="uid://dw10ye4j53iyy" path="res://Assets/3D/Textures/Raw_Textures/TV/TV_TV_BaseColor.png" id="1_xhk0c"]
+[ext_resource type="Texture2D" uid="uid://ch18ryipwdb22" path="res://Assets/3D/Textures/Raw_Textures/TV/TV_TV_Roughness.png" id="2_sqdcn"]
+
+[resource]
+albedo_texture = ExtResource("1_xhk0c")
+roughness_texture = ExtResource("2_sqdcn")

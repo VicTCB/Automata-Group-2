@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmnfo6n2r21yx"]
+
+[ext_resource type="Texture2D" uid="uid://c43yqoikpw5pu" path="res://Assets/3D/Textures/Raw_Textures/Window/MOdular_Window_BaseColor.png" id="1_l6p7b"]
+[ext_resource type="Texture2D" uid="uid://cxtk5x453qrk6" path="res://Assets/3D/Textures/Raw_Textures/Window/MOdular_Window_Roughness.png" id="2_wjqub"]
+
+[resource]
+albedo_texture = ExtResource("1_l6p7b")
+roughness_texture = ExtResource("2_wjqub")

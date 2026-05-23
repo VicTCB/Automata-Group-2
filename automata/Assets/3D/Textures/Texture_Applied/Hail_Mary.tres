@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bwmjod6iyr8p"]
+
+[ext_resource type="Texture2D" uid="uid://udvjfajvgbey" path="res://Assets/3D/Textures/Raw_Textures/Hail_Mary/Hail_Mary_Hail_Mary_BaseColor.png" id="1_k0m0y"]
+[ext_resource type="Texture2D" uid="uid://wh14ddd0mj7g" path="res://Assets/3D/Textures/Raw_Textures/Hail_Mary/Hail_Mary_Hail_Mary_Roughness.png" id="2_76j5c"]
+
+[resource]
+albedo_texture = ExtResource("1_k0m0y")
+roughness_texture = ExtResource("2_76j5c")

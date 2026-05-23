@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cfl2cmt4dcmab"]
+
+[ext_resource type="Texture2D" uid="uid://dtvsh05wnjw64" path="res://Assets/3D/Textures/Raw_Textures/Pillar/MOdular_Pillar1_BaseColor.png" id="1_7kkdk"]
+[ext_resource type="Texture2D" uid="uid://ibx87piffyrv" path="res://Assets/3D/Textures/Raw_Textures/Pillar/MOdular_Pillar1_Roughness.png" id="2_f8fi7"]
+
+[resource]
+albedo_texture = ExtResource("1_7kkdk")
+roughness_texture = ExtResource("2_f8fi7")

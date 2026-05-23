@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blffy3uwah34k"]
+
+[ext_resource type="Texture2D" uid="uid://esvfp5semetv" path="res://Assets/3D/Textures/Raw_Textures/Control_Panel/Contriol_Panel_Control_Panel_BaseColor.png" id="1_s1ofg"]
+[ext_resource type="Texture2D" uid="uid://cxtk5x453qrk6" path="res://Assets/3D/Textures/Raw_Textures/Window/MOdular_Window_Roughness.png" id="2_hhvk6"]
+
+[resource]
+albedo_texture = ExtResource("1_s1ofg")
+roughness_texture = ExtResource("2_hhvk6")

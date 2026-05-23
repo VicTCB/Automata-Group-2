@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2gvrhr6je7ky"]
+
+[ext_resource type="Texture2D" uid="uid://ds4loh8i0wgjn" path="res://Assets/3D/Textures/Raw_Textures/POLanet2/Planet2_Planet_2_BaseColor.png" id="1_hvuan"]
+[ext_resource type="Texture2D" uid="uid://d35wasoaxgasu" path="res://Assets/3D/Textures/Raw_Textures/POLanet2/Planet2_Planet_2_Roughness.png" id="2_hh4mn"]
+
+[resource]
+albedo_texture = ExtResource("1_hvuan")
+roughness_texture = ExtResource("2_hh4mn")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2ve01hv8c7uc"]
+
+[ext_resource type="Texture2D" uid="uid://cash62ucjosgm" path="res://Assets/3D/Textures/Raw_Textures/Mini_tv/Mini_tv_Mini_Tv_BaseColor.png" id="1_vce6d"]
+[ext_resource type="Texture2D" uid="uid://g3hgq5vwvmv4" path="res://Assets/3D/Textures/Raw_Textures/Mini_tv/Mini_tv_Mini_Tv_Roughness.png" id="2_kxsqf"]
+
+[resource]
+albedo_texture = ExtResource("1_vce6d")
+roughness_texture = ExtResource("2_kxsqf")
