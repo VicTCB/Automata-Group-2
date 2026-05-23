@@ -25,7 +25,6 @@ func _on_reload_button_pressed():
 	_add_input_field()
 
 func _on_simulate_button_pressed():
-
 	var strings = []
 	for child in string_list.get_children():
 		if child.text.strip_edges() != "":
@@ -36,12 +35,19 @@ func _on_simulate_button_pressed():
 
 	Global.input_strings = strings
 	Global.current_string_index = 0
-	queue_free()
 	
+	# 1. Instantiate the correct DFA scene
+	var sim_scene
 	if Global.active_dfa == 1:
-		get_tree().change_scene_to_file("res://Scenes/DFA1Simulation.tscn")
+		sim_scene = load("res://Scenes/DFA1/DFA1.tscn").instantiate()
 	else:
-		get_tree().change_scene_to_file("res://Scenes/DFA2Simulation.tscn")
+		sim_scene = load("res://Scenes/DFA2/DFA2.tscn").instantiate()
+		
+	# 2. Add it directly to the root of the game
+	get_tree().root.add_child(sim_scene)
+	
+	# 3. Destroy this UI menu
+	queue_free()
 
 func _on_input_text_changed(new_text: String, line_edit: LineEdit):
 	var allowed_chars = ""
