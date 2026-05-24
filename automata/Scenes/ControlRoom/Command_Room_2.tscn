@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dbllkvx27u80d"]
 
+[ext_resource type="Script" uid="uid://cuc3w0begikjn" path="res://Scripts/Others/command_room.gd" id="1_3jca2"]
+[ext_resource type="PackedScene" uid="uid://dhvc6kdpqe4uh" path="res://Scenes/Menus/pause_menu.tscn" id="1_5s4rx"]
 [ext_resource type="Texture2D" uid="uid://bex6v3467wo6w" path="res://Assets/WorldEnvironment/bryan-goff-f7YQo-eYHdM-unsplash.jpg" id="1_k7ta0"]
 [ext_resource type="PackedScene" uid="uid://bxbspm6kuc8a7" path="res://Assets/3D/Use_This/wall.tscn" id="1_peuwh"]
 [ext_resource type="PackedScene" uid="uid://cmj0h1ko5i3qp" path="res://Assets/3D/Use_This/floor.tscn" id="2_36tfi"]
@@ -40,6 +42,9 @@ background_mode = 2
 sky = SubResource("Sky_5s4rx")
 
 [node name="CommandRoom2" type="Node3D" unique_id=922336014]
+script = ExtResource("1_3jca2")
+
+[node name="PauseMenu" parent="." unique_id=2070655998 instance=ExtResource("1_5s4rx")]
 
 [node name="User" parent="." unique_id=1947249384 instance=ExtResource("8_36tfi")]
 transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 6.2215004, 1.163175, -2.3026035)

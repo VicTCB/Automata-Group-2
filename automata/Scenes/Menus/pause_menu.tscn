@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dhvc6kdpqe4uh"]
+
+[ext_resource type="Texture2D" uid="uid://b24i23gvtapsv" path="res://Assets/2D/MainMenu/placeholderPause.png" id="1_pw12o"]
+[ext_resource type="Script" uid="uid://cwyc3nw77q0a2" path="res://Scripts/Menus/pause_menu.gd" id="2_7smr3"]
+[ext_resource type="Texture2D" uid="uid://c23waoac5urfn" path="res://Assets/2D/MainMenu/placeholderResume.png" id="3_nwnlq"]
+[ext_resource type="Texture2D" uid="uid://cegsrxx86ja3n" path="res://Assets/2D/MainMenu/placeholderMainMenuHere.png" id="4_8kr8e"]
+[ext_resource type="Texture2D" uid="uid://hbbcsolf5dms" path="res://Assets/2D/MainMenu/placeholderExit.png" id="5_cnjyl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pw12o"]
+texture = ExtResource("1_pw12o")
+
+[node name="Pause Menu" type="CanvasLayer" unique_id=2070655998]
+process_mode = 3
+layer = 500
+script = ExtResource("2_7smr3")
+
+[node name="Background" type="Panel" parent="." unique_id=15682908]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pw12o")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="Background" unique_id=103673233]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -190.0
+offset_right = 1120.0022
+offset_bottom = 2470.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme_override_constants/separation = 250
+
+[node name="Resume" type="TextureButton" parent="Background/ButtonContainer" unique_id=1311527255]
+layout_mode = 2
+texture_normal = ExtResource("3_nwnlq")
+stretch_mode = 0
+
+[node name="MainMenu" type="TextureButton" parent="Background/ButtonContainer" unique_id=538792819]
+layout_mode = 2
+texture_normal = ExtResource("4_8kr8e")
+
+[node name="SignOff" type="TextureButton" parent="Background/ButtonContainer" unique_id=1117942510]
+layout_mode = 2
+texture_normal = ExtResource("5_cnjyl")
+stretch_mode = 0
+
+[connection signal="pressed" from="Background/ButtonContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Background/ButtonContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Background/ButtonContainer/SignOff" to="." method="_on_sign_off_pressed"]
