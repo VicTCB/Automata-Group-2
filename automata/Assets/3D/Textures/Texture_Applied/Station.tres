@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bos4revipwtpa"]
+
+[ext_resource type="Texture2D" uid="uid://ceeyldxn483hw" path="res://Assets/3D/Textures/Raw_Textures/Station/Station_Space_Station_BaseColor.png" id="1_twtg1"]
+[ext_resource type="Texture2D" uid="uid://ch607808becgl" path="res://Assets/3D/Textures/Raw_Textures/Station/Station_Space_Station_Roughness.png" id="2_43kop"]
+
+[resource]
+albedo_texture = ExtResource("1_twtg1")
+roughness_texture = ExtResource("2_43kop")
