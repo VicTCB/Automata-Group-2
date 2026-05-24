@@ -39,5 +39,5 @@ shadow_mesh = SubResource("ArrayMesh_1jjds")
 
 [node name="Contriol_Panel" unique_id=2080238098 instance=ExtResource("1_bs7os")]
 
-[node name="pCube3" parent="." index="0" unique_id=446692033]
+[node name="pCube3" parent="." index="0" unique_id=378848643]
 mesh = SubResource("ArrayMesh_vi5ip")

@@ -1,33 +1,33 @@
 extends Node3D
 
 # --- DFA DEFINITION ---
+# Mapped exactly to your handwritten table
 const TRANSITIONS = {
-	"Q0": {"0": "Q1", "1": "Q3"},
-	"Q1": {"0": "Q5", "1": "Q2"},
-	"Q2": {"0": "Q5", "1": "Q5"},
-	"Q3": {"0": "Q4", "1": "Q5"},
-	"Q4": {"0": "Q5", "1": "Q5"},
-	"Q5": {"0": "Q6", "1": "Q7"},
-	"Q6": {"0": "Q8", "1": "Q7"},
-	"Q7": {"0": "Q6", "1": "Q8"},
-	"Q8": {"0": "Q9", "1": "Q9"},
-	"Q9": {"0": "Q9", "1": "Q9"},
+	"Q0": {"a": "Q1", "b": "Q2"},
+	"Q1": {"a": "Q2", "b": "Q2"},
+	"Q2": {"a": "Q3", "b": "Q5"},
+	"Q3": {"a": "Q4", "b": "Q5"},
+	"Q4": {"a": "Q7", "b": "Q5"},
+	"Q5": {"a": "Q3", "b": "Q6"},
+	"Q6": {"a": "Q3", "b": "Q7"},
+	"Q7": {"a": "Q8", "b": "Q8"},
+	"Q8": {"a": "Q8", "b": "Q8"}
 }
-const HOVER_OFFSET = Vector3(0, 7, 0)
-const ACCEPT_STATES = ["Q9"]
+const HOVER_OFFSET = Vector3(0, 3, 0)
+const ACCEPT_STATES = ["Q8"]
 const START_STATE = "Q0"
 
+# --- STATE POSITIONS ---
 const STATE_POSITIONS = {
 	"Q0": Vector3(-60, 3, 0),
-	"Q1": Vector3(-40, 3, -20),
-	"Q2": Vector3(-15, 3, -28),
-	"Q3": Vector3(-40, 3, 20),
-	"Q4": Vector3(-15, 3, 28),
-	"Q5": Vector3(-15, 3, 0),
-	"Q6": Vector3(15, 3, -15),
-	"Q7": Vector3(15, 3, 15),
-	"Q8": Vector3(35, 3, 0),
-	"Q9": Vector3(65, 3, 0),
+	"Q1": Vector3(-40, 3, 20),
+	"Q2": Vector3(-30, 3, -15),
+	"Q3": Vector3(0, 3, -25),
+	"Q4": Vector3(25, 3, -15),
+	"Q5": Vector3(0, 3, 10),
+	"Q6": Vector3(25, 3, 20),
+	"Q7": Vector3(45, 3, 0),
+	"Q8": Vector3(65, 3, 0)
 }
 
 # --- NODE REFERENCES ---
@@ -42,17 +42,12 @@ var current_input_string = ""
 func _ready():
 	sim_camera.make_current() 
 	
-	# --- NEW: AUTO-ALIGN PLANETS ---
-	# Loop through every state in the dictionary
+	# Auto-align the planet meshes to the mathematical coordinates
 	for state_name in STATE_POSITIONS.keys():
-		# Find the 3D mesh with that exact name inside the StateNodes folder
 		var planet_mesh = state_nodes_folder.get_node_or_null(state_name)
-		
-		# If the mesh exists, snap its position to the exact dictionary coordinates!
 		if planet_mesh != null:
 			planet_mesh.position = STATE_POSITIONS[state_name]
-	# -------------------------------
-	
+			
 	run_current_string()
 
 func run_current_string():
@@ -63,10 +58,10 @@ func run_current_string():
 	print("Simulating string: ", current_input_string)
 	print("Path taken: ", state_path)
 
-	# Instantly teleport the rocket to the starting position (Local position)
+	# Teleport to start
 	rocket.position = STATE_POSITIONS[state_path[0]] + HOVER_OFFSET
-	
-	# Wait 1 second before moving so the player can orient themselves
+
+	# Wait 1 second before moving
 	await get_tree().create_timer(1.0).timeout
 	animate_rocket()
 
@@ -74,7 +69,8 @@ func build_path(input: String) -> Array:
 	var path = [START_STATE]
 	var current = START_STATE
 	
-	for ch in input:
+	# .to_lower() ensures it works even if the user typed capital A or B
+	for ch in input.to_lower():
 		if TRANSITIONS[current].has(ch):
 			current = TRANSITIONS[current][ch]
 		path.append(current)
@@ -102,6 +98,7 @@ func animate_rocket():
 			tween.tween_property(rocket, "position", target_pos, 1.0).set_trans(Tween.TRANS_SINE)
 			
 		tween.tween_interval(0.2) 
+
 	tween.finished.connect(_on_simulation_finished)
 
 func _on_simulation_finished():
@@ -112,9 +109,7 @@ func _on_simulation_finished():
 	else:
 		print("RESULT: STRING REJECTED!")
 
-	# Wait 2 seconds so the player can see the final result
 	await get_tree().create_timer(2.0).timeout
-	
 	_move_to_next_string()
 
 func _move_to_next_string():

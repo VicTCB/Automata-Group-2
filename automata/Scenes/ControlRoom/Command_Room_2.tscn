@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dbllkvx27u80d"]
 
+[ext_resource type="Texture2D" uid="uid://bex6v3467wo6w" path="res://Assets/WorldEnvironment/bryan-goff-f7YQo-eYHdM-unsplash.jpg" id="1_k7ta0"]
 [ext_resource type="PackedScene" uid="uid://bxbspm6kuc8a7" path="res://Assets/3D/Use_This/wall.tscn" id="1_peuwh"]
 [ext_resource type="PackedScene" uid="uid://cmj0h1ko5i3qp" path="res://Assets/3D/Use_This/floor.tscn" id="2_36tfi"]
 [ext_resource type="PackedScene" uid="uid://oium4ugdtx7n" path="res://Assets/3D/Use_This/pillar.tscn" id="3_k7ta0"]
@@ -7,65 +8,158 @@
 [ext_resource type="PackedScene" uid="uid://clwldcty8m0xv" path="res://Assets/3D/Use_This/tv.tscn" id="5_d32on"]
 [ext_resource type="PackedScene" uid="uid://b1jba0rho0k8s" path="res://Assets/3D/Use_This/mini_tv.tscn" id="6_1trhs"]
 [ext_resource type="PackedScene" uid="uid://cy4oewdbrnmwe" path="res://Assets/3D/Use_This/window.tscn" id="7_1svk1"]
+[ext_resource type="PackedScene" uid="uid://crpm8k7iv256a" path="res://Scenes/Player/User.tscn" id="8_36tfi"]
+[ext_resource type="Script" uid="uid://dwpgvxj7vtrnb" path="res://Scripts/ControlRoom/ControlPanel/enter_coordinates.gd" id="9_1svk1"]
+[ext_resource type="Script" uid="uid://c2tyv78q8yn5g" path="res://Scripts/ControlRoom/ControlPanel/change_file.gd" id="9_6ewnu"]
+[ext_resource type="Script" uid="uid://dju4y7fe61kdc" path="res://Scripts/ControlRoom/DisplayScreen/display_screen.gd" id="10_tv4ge"]
+[ext_resource type="Texture2D" uid="uid://bh6vmrlxym1ei" path="res://Assets/2D/DFA1/placeholderDFA1.png" id="11_1trhs"]
+[ext_resource type="Texture2D" uid="uid://dxvcbtcopux84" path="res://Assets/2D/DFA2/placeholderDFA2.png" id="12_1svk1"]
+[ext_resource type="Script" uid="uid://bu6n8kiada7aq" path="res://Scripts/ControlRoom/Monitor2/monitor2.gd" id="15_xn3gm"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tv4ge"]
+panorama = ExtResource("1_k7ta0")
+
+[sub_resource type="Sky" id="Sky_d32on"]
+sky_material = SubResource("PanoramaSkyMaterial_tv4ge")
+
+[sub_resource type="Environment" id="Environment_36tfi"]
+background_mode = 2
+sky = SubResource("Sky_d32on")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7ta0"]
+size = Vector3(0.8397827, 0.5917969, 2.9985352)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k7ta0"]
+height = 0.3505249
+radius = 0.059570313
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tv4ge"]
+size = Vector3(0.29467773, 0.50167847, 0.81726074)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ewnu"]
+size = Vector3(0.19915771, 0.79345703, 1.152832)
 
 [node name="CommandRoom2" type="Node3D" unique_id=922336014]
 
-[node name="Structure" type="Node3D" parent="." unique_id=1293796367]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1136706290]
+environment = SubResource("Environment_36tfi")
 
-[node name="Wall2" parent="Structure" unique_id=2107322337 instance=ExtResource("1_peuwh")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4.1)
+[node name="User" parent="." unique_id=1947249384 instance=ExtResource("8_36tfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1814017, 1.4920084, -2.3026035)
 
-[node name="Floor" parent="Structure" unique_id=245512111 instance=ExtResource("2_36tfi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+[node name="TheRoom" type="Node3D" parent="." unique_id=1995576966]
 
-[node name="Floor2" parent="Structure" unique_id=1977289894 instance=ExtResource("2_36tfi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -0.1)
+[node name="Structure" type="Node3D" parent="TheRoom" unique_id=1293796367]
 
-[node name="Floor3" parent="Structure" unique_id=1796719022 instance=ExtResource("2_36tfi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -0.1)
+[node name="Walls" type="Node3D" parent="TheRoom/Structure" unique_id=785660212]
 
-[node name="Pillar" parent="Structure" unique_id=1819953858 instance=ExtResource("3_k7ta0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 0, 0)
+[node name="Wall" parent="TheRoom/Structure/Walls" unique_id=1706073596 instance=ExtResource("1_peuwh")]
 
-[node name="Wall3" parent="Structure" unique_id=1699221352 instance=ExtResource("1_peuwh")]
-transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, 8, 0, -4.2)
-
-[node name="Wall5" parent="Structure" unique_id=747860265 instance=ExtResource("1_peuwh")]
-transform = Transform3D(-1.5893256e-08, 0, 1, 0, 1, 0, -1, 0, -1.5893256e-08, 8, 0, -0.09999981)
-
-[node name="Wall4" parent="Structure" unique_id=734893045 instance=ExtResource("1_peuwh")]
-transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, 4, 0, -4.2)
-
-[node name="Window" parent="Structure" unique_id=1408653362 instance=ExtResource("7_1svk1")]
+[node name="Window" parent="TheRoom/Structure/Walls" unique_id=1408653362 instance=ExtResource("7_1svk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="Floor4" parent="Structure" unique_id=702525318 instance=ExtResource("2_36tfi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -0.1)
+[node name="Wall2" parent="TheRoom/Structure/Walls" unique_id=2107322337 instance=ExtResource("1_peuwh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4.1)
 
-[node name="Floor5" parent="Structure" unique_id=1437736269 instance=ExtResource("2_36tfi")]
-transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 3, -4.1)
+[node name="Wall3" parent="TheRoom/Structure/Walls" unique_id=1699221352 instance=ExtResource("1_peuwh")]
+transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, 8, 0, -4.2)
 
-[node name="Floor6" parent="Structure" unique_id=1399043494 instance=ExtResource("2_36tfi")]
-transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 2, 3, -4.1)
+[node name="Wall5" parent="TheRoom/Structure/Walls" unique_id=747860265 instance=ExtResource("1_peuwh")]
+transform = Transform3D(-1.5893256e-08, 0, 1, 0, 1, 0, -1, 0, -1.5893256e-08, 8, 0, -0.09999981)
 
-[node name="Floor7" parent="Structure" unique_id=2034897656 instance=ExtResource("2_36tfi")]
-transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 4, 3, -4.1)
+[node name="Wall4" parent="TheRoom/Structure/Walls" unique_id=734893045 instance=ExtResource("1_peuwh")]
+transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, 4, 0, -4.2)
 
-[node name="Floor8" parent="Structure" unique_id=1273636130 instance=ExtResource("2_36tfi")]
-transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 6, 3, -4.1)
+[node name="Pillar" parent="TheRoom/Structure/Walls" unique_id=1819953858 instance=ExtResource("3_k7ta0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 0, 0)
 
-[node name="Pillar2" parent="Structure" unique_id=322061070 instance=ExtResource("3_k7ta0")]
+[node name="Pillar2" parent="TheRoom/Structure/Walls" unique_id=322061070 instance=ExtResource("3_k7ta0")]
 transform = Transform3D(-1.0000001, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1.0000001, 4.4, 0, -4.2000003)
 
-[node name="Wall" parent="Structure" unique_id=1706073596 instance=ExtResource("1_peuwh")]
+[node name="Floors" type="Node3D" parent="TheRoom/Structure" unique_id=2119895025]
 
-[node name="Contriol_Panel" parent="." unique_id=2080238098 instance=ExtResource("4_tv4ge")]
+[node name="Floor" parent="TheRoom/Structure/Floors" unique_id=245512111 instance=ExtResource("2_36tfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 
-[node name="TV" parent="." unique_id=1803653856 instance=ExtResource("5_d32on")]
+[node name="Floor2" parent="TheRoom/Structure/Floors" unique_id=1977289894 instance=ExtResource("2_36tfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -0.1)
+
+[node name="Floor3" parent="TheRoom/Structure/Floors" unique_id=1796719022 instance=ExtResource("2_36tfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -0.1)
+
+[node name="Floor4" parent="TheRoom/Structure/Floors" unique_id=702525318 instance=ExtResource("2_36tfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -0.1)
+
+[node name="Roof" type="Node3D" parent="TheRoom/Structure" unique_id=360120717]
+
+[node name="Floor5" parent="TheRoom/Structure/Roof" unique_id=1437736269 instance=ExtResource("2_36tfi")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 3, -4.1)
+
+[node name="Floor6" parent="TheRoom/Structure/Roof" unique_id=1399043494 instance=ExtResource("2_36tfi")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 2, 3, -4.1)
+
+[node name="Floor7" parent="TheRoom/Structure/Roof" unique_id=2034897656 instance=ExtResource("2_36tfi")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 4, 3, -4.1)
+
+[node name="Floor8" parent="TheRoom/Structure/Roof" unique_id=1273636130 instance=ExtResource("2_36tfi")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 6, 3, -4.1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TheRoom" unique_id=1528182332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5103841, -2)
+
+[node name="ControlPanel" type="Node3D" parent="TheRoom" unique_id=976054096]
+
+[node name="Table" type="Node3D" parent="TheRoom/ControlPanel" unique_id=1550173200]
+
+[node name="Contriol_Panel" parent="TheRoom/ControlPanel/Table" unique_id=2080238098 instance=ExtResource("4_tv4ge")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TheRoom/ControlPanel/Table" unique_id=608031436]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TheRoom/ControlPanel/Table/StaticBody3D" unique_id=1582521307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5201581, 0.39954007, -2.0017438)
+shape = SubResource("BoxShape3D_k7ta0")
+
+[node name="ChangeFile" type="Node3D" parent="TheRoom/ControlPanel" unique_id=1216093754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7058319, 0.8005247, -1.4035323)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TheRoom/ControlPanel/ChangeFile" unique_id=245019885]
+script = ExtResource("9_6ewnu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TheRoom/ControlPanel/ChangeFile/StaticBody3D" unique_id=1387220161]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_k7ta0")
+
+[node name="EnterCoordinates" type="Node3D" parent="TheRoom/ControlPanel" unique_id=788885660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6599757, 0.8008579, -2.4957912)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TheRoom/ControlPanel/EnterCoordinates" unique_id=1522139768]
+script = ExtResource("9_1svk1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TheRoom/ControlPanel/EnterCoordinates/StaticBody3D" unique_id=163362236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04333496, 0.012954712, 0.012756348)
+shape = SubResource("BoxShape3D_tv4ge")
+
+[node name="GiantScreen" type="Node3D" parent="TheRoom" unique_id=1981157063]
+
+[node name="TV" parent="TheRoom/GiantScreen" unique_id=1803653856 instance=ExtResource("5_d32on")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
-[node name="Mini_tv" parent="." unique_id=2075023489 instance=ExtResource("6_1trhs")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.5, 1.2, -4.1016912)
+[node name="Sprite3D" type="Sprite3D" parent="TheRoom/GiantScreen" unique_id=1637358059 groups=["DisplayScreen"]]
+transform = Transform3D(-6.9504233e-09, 0, 0.1, 0, 0.113587774, 0, -0.15900716, 0, -4.371139e-09, 0.13571048, 1.9160886, -2.0013428)
+texture = ExtResource("11_1trhs")
+script = ExtResource("10_tv4ge")
+dfa1_texture = ExtResource("11_1trhs")
+dfa2_texture = ExtResource("12_1svk1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1528182332]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5103841, -2)
+[node name="Monitor2" type="Node3D" parent="TheRoom" unique_id=1343141726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0112507, 1.5981026, -4.003776)
+
+[node name="Mini_tv" parent="TheRoom/Monitor2" unique_id=2075023489 instance=ExtResource("6_1trhs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.51125073, -0.39810252, -0.09791517)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TheRoom/Monitor2" unique_id=368657428]
+script = ExtResource("15_xn3gm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TheRoom/Monitor2/StaticBody3D" unique_id=183568121]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_6ewnu")

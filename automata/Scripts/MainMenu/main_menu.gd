@@ -8,7 +8,7 @@ func _exit_tree():
 	Global.in_menu = false
 
 func _on_board_station_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/ControlRoom/command_room.tscn")
+	get_tree().change_scene_to_file("res://Scenes/ControlRoom/Command_Room_2.tscn")
 
 
 func _on_sign_off_pressed() -> void:

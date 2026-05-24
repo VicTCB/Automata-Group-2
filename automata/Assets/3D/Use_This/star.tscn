@@ -42,6 +42,6 @@ shadow_mesh = SubResource("ArrayMesh_kxltq")
 
 [node name="Star" unique_id=1299086348 instance=ExtResource("1_8em8o")]
 
-[node name="Star" parent="." index="0" unique_id=37956845]
+[node name="Star" parent="." index="0" unique_id=1257259308]
 transform = Transform3D(7.3339095, -0.18130678, -0.0028018951, 0.18130954, 7.3339076, 0.007413569, 0.002617836, -0.0074805394, 7.3361464, 0, 0, -3.5527136e-17)
 mesh = SubResource("ArrayMesh_40pk5")

@@ -15,5 +15,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43855625, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=759822494]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-target_position = Vector3(0, -3, 0)
+target_position = Vector3(0, -2, 0)
 debug_shape_thickness = 5

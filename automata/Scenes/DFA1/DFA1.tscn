@@ -1,9 +1,95 @@
 [gd_scene format=3 uid="uid://d3skfke0cda76"]
 
+[ext_resource type="Script" uid="uid://ioequx4qe3bx" path="res://Scripts/DFA1/dfa_1.gd" id="1_71aus"]
+[ext_resource type="Texture2D" uid="uid://bex6v3467wo6w" path="res://Assets/WorldEnvironment/bryan-goff-f7YQo-eYHdM-unsplash.jpg" id="2_mp61a"]
+[ext_resource type="PackedScene" uid="uid://blc1ugfb5584y" path="res://Assets/3D/Use_This/hail_mary.tscn" id="3_1juvt"]
+[ext_resource type="PackedScene" uid="uid://oujlrw7arkn4" path="res://Assets/3D/Use_This/planet_1.tscn" id="3_hdv5i"]
+[ext_resource type="PackedScene" uid="uid://dglv6lqgb7ihe" path="res://Assets/3D/Use_This/planet_2.tscn" id="4_5cf66"]
+[ext_resource type="PackedScene" uid="uid://b5nia4ds2cqda" path="res://Assets/3D/Use_This/star.tscn" id="4_j1aes"]
+[ext_resource type="PackedScene" uid="uid://2e2cp2fnao5h" path="res://Assets/3D/Use_This/planet_3.tscn" id="6_j1aes"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1juvt"]
+panorama = ExtResource("2_mp61a")
+
+[sub_resource type="Sky" id="Sky_fopts"]
+sky_material = SubResource("PanoramaSkyMaterial_1juvt")
+
+[sub_resource type="Environment" id="Environment_hdv5i"]
+background_mode = 2
+sky = SubResource("Sky_fopts")
+ambient_light_source = 3
+
 [node name="DFA1" type="Node3D" unique_id=303588228]
+script = ExtResource("1_71aus")
 
-[node name="SimulationCamera" type="Camera3D" parent="." unique_id=440494608]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 60, 0)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1412149196]
+environment = SubResource("Environment_hdv5i")
 
-[node name="FlatBoard" type="CSGBox3D" parent="." unique_id=650923072]
-size = Vector3(100, 1, 50)
+[node name="SimEnvironment" type="Node3D" parent="." unique_id=1930881480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 700, 0)
+
+[node name="SimulationCamera" type="Camera3D" parent="SimEnvironment" unique_id=440494608]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 70, 0)
+
+[node name="Rocket" type="Node3D" parent="SimEnvironment" unique_id=667298675]
+
+[node name="Hail_Mary" parent="SimEnvironment/Rocket" unique_id=795500726 instance=ExtResource("3_1juvt")]
+transform = Transform3D(10, 0, 0, 0, -8.571673, 5.15038, 0, -5.15038, -8.571673, 0, 0, 0)
+
+[node name="StateNodes" type="Node3D" parent="SimEnvironment" unique_id=246427934]
+
+[node name="Q0" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1601461376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 3, 0)
+
+[node name="Planet1" parent="SimEnvironment/StateNodes/Q0" unique_id=238815096 instance=ExtResource("3_hdv5i")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Q1" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1407082173]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -40, 3, 20)
+
+[node name="Star" parent="SimEnvironment/StateNodes/Q1" unique_id=1299086348 instance=ExtResource("4_j1aes")]
+
+[node name="Q2" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=167757804]
+transform = Transform3D(0.7326663, 0.51116014, -0.4493501, 0.28095454, 0.37419632, 0.88376564, 0.61989087, -0.77375215, 0.13054825, -30, 3, -15)
+
+[node name="Planet2" parent="SimEnvironment/StateNodes/Q2" unique_id=1983133354 instance=ExtResource("4_5cf66")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Q3" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1661007117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -25)
+
+[node name="Star" parent="SimEnvironment/StateNodes/Q3" unique_id=1310890354 instance=ExtResource("4_j1aes")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Q4" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1419289820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3, -15)
+
+[node name="Star" parent="SimEnvironment/StateNodes/Q4" unique_id=1917207856 instance=ExtResource("4_j1aes")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Q5" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=193645829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+
+[node name="Star" parent="SimEnvironment/StateNodes/Q5" unique_id=520615307 instance=ExtResource("4_j1aes")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Q6" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1949313715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3, 20)
+
+[node name="Star" parent="SimEnvironment/StateNodes/Q6" unique_id=332155353 instance=ExtResource("4_j1aes")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Q7" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1833973227]
+transform = Transform3D(0.21822798, 0.9424209, -0.2534157, -0.5105503, 0.33155522, 0.7933533, 0.831694, -0.043750405, 0.55350786, 45, 3, 0)
+
+[node name="Planet2" parent="SimEnvironment/StateNodes/Q7" unique_id=1514063305 instance=ExtResource("4_5cf66")]
+transform = Transform3D(-5.4610186, -8.377188, 0, 8.377188, -5.4610186, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Q8" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1765703037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 3, 0)
+
+[node name="Planet3" parent="SimEnvironment/StateNodes/Q8" unique_id=1942454777 instance=ExtResource("6_j1aes")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SimEnvironment" unique_id=1268836485]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 100, 0)
