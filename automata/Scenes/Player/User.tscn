@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://crpm8k7iv256a"]
 
 [ext_resource type="Script" uid="uid://tec0dam5534j" path="res://Scripts/User/user.gd" id="1_fpxfn"]
+[ext_resource type="FontFile" uid="uid://bb3pu8sygsqum" path="res://Assets/2D/Fonts/Nasalization Rg.otf" id="2_acfty"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b6gcj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ypw2m"]
+font = ExtResource("2_acfty")
+font_size = 32
 
 [node name="User" type="CharacterBody3D" unique_id=1947249384]
 script = ExtResource("1_fpxfn")
@@ -17,3 +22,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43855625, 0)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 target_position = Vector3(0, -2, 0)
 debug_shape_thickness = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1144143297]
+
+[node name="InteractLabel" type="Label" parent="CanvasLayer" unique_id=1826272664]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -20.0
+offset_right = 196.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "PRESS [F] TO INTERACT"
+label_settings = SubResource("LabelSettings_ypw2m")
+horizontal_alignment = 1
+vertical_alignment = 2

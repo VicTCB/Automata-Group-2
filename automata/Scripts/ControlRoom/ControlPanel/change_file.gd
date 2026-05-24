@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+var interact_text = "PRESS [F] TO CHANGE FILES"
+
 func on_interact():
 	if Global.active_dfa == 1:
 		Global.active_dfa = 2

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://blc1ugfb5584y" path="res://Assets/3D/Use_This/hail_mary.tscn" id="3_3qtr5"]
 [ext_resource type="PackedScene" uid="uid://b5nia4ds2cqda" path="res://Assets/3D/Use_This/star.tscn" id="3_8b2yq"]
 [ext_resource type="PackedScene" uid="uid://oujlrw7arkn4" path="res://Assets/3D/Use_This/planet_1.tscn" id="3_q4gml"]
+[ext_resource type="PackedScene" uid="uid://cdxq3xs3htpma" path="res://Assets/3D/Use_This/station.tscn" id="3_vummb"]
 [ext_resource type="PackedScene" uid="uid://2e2cp2fnao5h" path="res://Assets/3D/Use_This/planet_3.tscn" id="4_4xp6a"]
 [ext_resource type="PackedScene" uid="uid://dglv6lqgb7ihe" path="res://Assets/3D/Use_This/planet_2.tscn" id="4_md273"]
 [ext_resource type="FontFile" uid="uid://bb3pu8sygsqum" path="res://Assets/2D/Fonts/Nasalization Rg.otf" id="7_vummb"]
@@ -22,11 +23,64 @@ ambient_light_source = 3
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_md273"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_hlmxm"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1aes"]
 
 [sub_resource type="TextMesh" id="TextMesh_hlmxm"]
 material = SubResource("StandardMaterial3D_j1aes")
 text = "1
+>>>>>"
+font = ExtResource("7_vummb")
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_vummb"]
+text = ">>>>>
+0"
+font = ExtResource("7_vummb")
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_ln4yb"]
+text = ">>>>>
+1"
+font = ExtResource("7_vummb")
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_vqr0d"]
+text = "0
+>>>>>"
+font = ExtResource("7_vummb")
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_w7l8y"]
+text = "0 , 1
+>>>>>"
+font = ExtResource("7_vummb")
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_wfp8l"]
+text = ">>>>>
+0 , 1"
+font = ExtResource("7_vummb")
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_tklyj"]
+text = "0
+>>>>>"
+font = ExtResource("7_vummb")
+font_size = 127
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlmxm"]
+
+[sub_resource type="TextMesh" id="TextMesh_1jyt8"]
+material = SubResource("StandardMaterial3D_hlmxm")
+text = "1
+>>>>>"
+font = ExtResource("7_vummb")
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_xjqlh"]
+text = "0 , 1
 >>>>>"
 font = ExtResource("7_vummb")
 font_size = 127
@@ -48,8 +102,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 7
 [node name="Q0" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=821481607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 3, 0)
 
-[node name="Planet1" parent="SimEnvironment/StateNodes/Q0" unique_id=238815096 instance=ExtResource("3_q4gml")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+[node name="Station" parent="SimEnvironment/StateNodes/Q0" unique_id=84831519 instance=ExtResource("3_vummb")]
+transform = Transform3D(4.3415394, -0.9595472, -2.286985, 2.457408, 2.286985, 3.705516, 0.33493647, -4.341539, 2.457407, 0, 0, 0)
 
 [node name="Q1" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=464403159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3, -20)
@@ -78,8 +132,8 @@ transform = Transform3D(12.2722435, -8.009044, -3.2011192, 8.577006, 10.745258, 
 [node name="Q5" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=80065949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, 0)
 
-[node name="Planet2" parent="SimEnvironment/StateNodes/Q5" unique_id=1983133354 instance=ExtResource("4_md273")]
-transform = Transform3D(7.96372, -5.6672306, 2.1122632, 0.14148887, 3.6660755, 9.30268, -6.046416, -7.378509, 2.9997444, 0, 0, 0)
+[node name="Planet1" parent="SimEnvironment/StateNodes/Q5" unique_id=238815096 instance=ExtResource("3_q4gml")]
+transform = Transform3D(3.6517155, -6.892373, -6.2578096, -8.821413, -0.41409183, -4.69161, 2.974501, 7.2335157, -6.2312636, 0, 0, 0)
 
 [node name="Q6" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=89779332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -15)
@@ -163,6 +217,18 @@ mesh = SubResource("PlaneMesh_md273")
 transform = Transform3D(13.608707, 0, 0, 0, 1, 0, 0, 0, 0.10616764, 50.051296, -1397.2769, -0.10329771)
 mesh = SubResource("PlaneMesh_md273")
 
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1347482647]
+transform = Transform3D(-0.1914871, -2.448332e-09, -0.09940771, 7.063625e-10, 1, -2.5067468e-10, 1.7515639, -6.709373e-10, -0.010867589, 64.84938, 3, 2.9402752)
+mesh = SubResource("PlaneMesh_hlmxm")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1026194687]
+transform = Transform3D(1.7320166, 0, 0.018369399, 0, 0.9999996, 0, -0.32366884, 0, 0.09829834, 66.43036, 3, 4.276987)
+mesh = SubResource("PlaneMesh_hlmxm")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1803281384]
+transform = Transform3D(-0.87494725, 0, 0.08679994, 0, 0.9999995, 0, -1.5294149, 0, -0.049656488, 67.18298, 3, 2.4334738)
+mesh = SubResource("PlaneMesh_hlmxm")
+
 [node name="Signs" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1360169474]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1129024278]
@@ -180,6 +246,54 @@ mesh = SubResource("TextMesh_hlmxm")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1829844698]
 transform = Transform3D(0.77604634, -0.6306758, -2.7567722e-08, 1.6040521e-15, -4.3711392e-08, 1, -0.6306758, -0.77604634, -3.3922067e-08, 24.992126, 0, 5.5631003)
 mesh = SubResource("TextMesh_hlmxm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=310910407]
+transform = Transform3D(0.71569276, -0.6984153, -3.0528703e-08, 0, -4.371139e-08, 1, -0.6984153, -0.71569276, -3.128392e-08, -48.35431, 0, -9.262864)
+mesh = SubResource("TextMesh_vummb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1643041122]
+transform = Transform3D(0.77235675, 0.63518894, 2.7764992e-08, 0, -4.371139e-08, 1, 0.63518894, -0.77235675, -3.376079e-08, -28.463446, 0, -8.674508)
+mesh = SubResource("TextMesh_vummb")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=771669930]
+transform = Transform3D(0.88487387, -0.46583065, -2.0362108e-08, 2.4904653e-16, -4.3711395e-08, 1, -0.46583065, -0.88487387, -3.8679072e-08, 2.615572, 0, -6.779191)
+mesh = SubResource("TextMesh_vummb")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1609229577]
+transform = Transform3D(0.78525203, 0.6191762, 2.7065056e-08, 3.6286256e-15, -4.3711392e-08, 1, 0.6191762, -0.78525203, -3.4324465e-08, 23.858776, 0, -5.989766)
+mesh = SubResource("TextMesh_vummb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1863187421]
+transform = Transform3D(0.95214534, -0.30564544, -1.3360188e-08, 0, -4.371139e-08, 1, -0.30564544, -0.95214534, -4.1619597e-08, -25.724394, 0, -22.620764)
+mesh = SubResource("TextMesh_ln4yb")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1544028606]
+transform = Transform3D(0.9513796, 0.30802095, 1.34640255e-08, 0, -4.371139e-08, 1, 0.30802095, -0.9513796, -4.158612e-08, -24.573544, 0, 23.179419)
+mesh = SubResource("TextMesh_vqr0d")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1729135750]
+transform = Transform3D(-4.3711385e-08, -0.99999994, -4.371139e-08, 0, -4.3711385e-08, 1, -0.99999994, 4.3711385e-08, 1.9106855e-15, -16.67131, 0, 13.818758)
+mesh = SubResource("TextMesh_w7l8y")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1952323789]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 4.371139e-08, 0, -4.3711385e-08, 1, 0.99999994, 4.3711385e-08, 1.9106855e-15, -16.587572, 0, -16.82949)
+mesh = SubResource("TextMesh_wfp8l")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1599634099]
+transform = Transform3D(-0.014991909, -0.9998876, -4.370647e-08, 0, -4.371139e-08, 1, -0.9998876, 0.014991909, 6.553176e-10, 13.430862, 0, -0.034563065)
+mesh = SubResource("TextMesh_tklyj")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=206712942]
+transform = Transform3D(0.012705654, 0.9999193, 4.3707857e-08, 0, -4.371139e-08, 1, 0.9999193, -0.012705654, -5.553815e-10, 16.542917, 0, -0.057502866)
+mesh = SubResource("TextMesh_1jyt8")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=2108633180]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.941353, 0, -1.7737314)
+mesh = SubResource("TextMesh_xjqlh")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=193087829]
+transform = Transform3D(0.08402569, -0.9964636, -4.3556806e-08, 0, -4.371139e-08, 1, -0.9964636, -0.08402569, -3.6728796e-09, 62.937645, 0, 4.5867496)
+mesh = SubResource("TextMesh_xjqlh")
 
 [node name="Rocket" type="Node3D" parent="SimEnvironment" unique_id=1785580816]
 

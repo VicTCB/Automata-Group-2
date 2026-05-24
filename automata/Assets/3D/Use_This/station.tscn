@@ -39,5 +39,5 @@ shadow_mesh = SubResource("ArrayMesh_6sncd")
 
 [node name="Station" unique_id=84831519 instance=ExtResource("1_g3he0")]
 
-[node name="pCylinder5" parent="." index="0" unique_id=1020619307]
+[node name="pCylinder5" parent="." index="0" unique_id=293519573]
 mesh = SubResource("ArrayMesh_5b1lh")

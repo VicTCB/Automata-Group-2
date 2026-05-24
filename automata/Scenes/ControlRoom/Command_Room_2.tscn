@@ -136,6 +136,8 @@ script = ExtResource("9_1svk1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04333496, 0.012954712, 0.012756348)
 shape = SubResource("BoxShape3D_tv4ge")
 
+[node name="Label3D" type="Label3D" parent="TheRoom/ControlPanel/EnterCoordinates/StaticBody3D" unique_id=18446014]
+
 [node name="GiantScreen" type="Node3D" parent="TheRoom" unique_id=1981157063]
 
 [node name="TV" parent="TheRoom/GiantScreen" unique_id=1803653856 instance=ExtResource("5_d32on")]
