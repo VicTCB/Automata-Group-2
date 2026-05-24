@@ -41,7 +41,7 @@ var current_input_string = ""
 
 func _ready():
 	sim_camera.make_current() 
-	
+	Global.in_menu = true
 	# Auto-align the planet meshes to the mathematical coordinates
 	for state_name in STATE_POSITIONS.keys():
 		var planet_mesh = state_nodes_folder.get_node_or_null(state_name)

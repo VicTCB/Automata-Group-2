@@ -41,7 +41,7 @@ var current_input_string = ""
 
 func _ready():
 	sim_camera.make_current() 
-	
+	Global.in_menu = true
 	# --- NEW: AUTO-ALIGN PLANETS ---
 	# Loop through every state in the dictionary
 	for state_name in STATE_POSITIONS.keys():

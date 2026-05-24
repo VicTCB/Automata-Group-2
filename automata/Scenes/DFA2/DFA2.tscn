@@ -21,10 +21,6 @@ background_mode = 2
 sky = SubResource("Sky_k8g5f")
 ambient_light_source = 3
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_md273"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_hlmxm"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1aes"]
 
 [sub_resource type="TextMesh" id="TextMesh_hlmxm"]
@@ -84,6 +80,10 @@ text = "0 , 1
 >>>>>"
 font = ExtResource("7_vummb")
 font_size = 127
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_md273"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hlmxm"]
 
 [node name="DFA2" type="Node3D" unique_id=303588228]
 script = ExtResource("1_ounok")
@@ -159,76 +159,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 3, 0)
 [node name="Planet3" parent="SimEnvironment/StateNodes/Q9" unique_id=1942454777 instance=ExtResource("4_4xp6a")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
-[node name="Pathways" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=126060430]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1654968699]
-transform = Transform3D(9.994671, 0, -0.070369236, 0, 1, 0, 9.898841, 0, 0.07105048, -50.1119, 2.7230835, 10.252943)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=2046670167]
-transform = Transform3D(12.100769, 0, -0.027728168, 0, 1, 0, 3.7206023, 0, 0.09018224, -27.517406, 2.7230835, 24.041218)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=55576800]
-transform = Transform3D(-9.898143, 0, -0.07105539, 0, 1, 0, 9.995362, 0, -0.070364274, -49.689445, 2.7230835, -10.236214)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=2091661072]
-transform = Transform3D(-12.3752165, 0, -0.029637884, 0, 1, 0, 3.9099662, 0, -0.09380522, -26.976269, 2.7230835, -24.07242)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1219684922]
-transform = Transform3D(-11.7555, 0, 0.061254352, 0, 0.99999994, 0, -9.34706, 0, -0.077037625, -27.739323, 2.7230835, -10.26363)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1769675767]
-transform = Transform3D(12.262947, 0, 0.07366041, 0, 0.9999999, 0, -9.493961, 0, 0.09514403, -27.681885, 2.7230835, 10.760556)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1333027427]
-transform = Transform3D(-6.532495e-07, 0, 0.12032557, 0, 0.9999999, 0, -14.944607, 0, -5.2595976e-09, -15.015244, 2.7230835, 13.181186)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=2068924231]
-transform = Transform3D(-6.532495e-07, 0, 0.12032557, 0, 0.9999999, 0, -14.944607, 0, -5.2595976e-09, -14.983402, 2.7230835, -13.855132)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=899931651]
-transform = Transform3D(-14.281285, 0, 0.052341834, 0, 1, 0, -7.219314, 0, -0.103542894, 0.8173561, 2.7230835, 7.8941927)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=879457539]
-transform = Transform3D(-6.532495e-07, 0, 0.12032557, 0, 0.9999999, 0, -14.944607, 0, -5.2595976e-09, 14.981714, 2.7230835, 0.5840187)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1435644470]
-transform = Transform3D(14.494663, 0, 0.05811522, 0, 0.99999964, 0, -7.2976646, 0, 0.11542879, 0.40040207, -697.2769, -7.6371217)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1685165607]
-transform = Transform3D(9.944422, 0, 0.064666025, 0, 0.9999999, 0, -7.637244, 0, 0.08420137, 25.648512, -1397.2769, 7.2235103)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1542715434]
-transform = Transform3D(9.951484, 0, -0.06458812, 0, 1, 0, 7.6280427, 0, 0.08426115, 24.621986, -1397.2769, -7.551932)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=932447857]
-transform = Transform3D(13.608707, 0, 0, 0, 1, 0, 0, 0, 0.10616764, 50.051296, -1397.2769, -0.10329771)
-mesh = SubResource("PlaneMesh_md273")
-
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1347482647]
-transform = Transform3D(-0.1914871, -2.448332e-09, -0.09940771, 7.063625e-10, 1, -2.5067468e-10, 1.7515639, -6.709373e-10, -0.010867589, 64.84938, 3, 2.9402752)
-mesh = SubResource("PlaneMesh_hlmxm")
-
-[node name="MeshInstance3D16" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1026194687]
-transform = Transform3D(1.7320166, 0, 0.018369399, 0, 0.9999996, 0, -0.32366884, 0, 0.09829834, 66.43036, 3, 4.276987)
-mesh = SubResource("PlaneMesh_hlmxm")
-
-[node name="MeshInstance3D17" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1803281384]
-transform = Transform3D(-0.87494725, 0, 0.08679994, 0, 0.9999995, 0, -1.5294149, 0, -0.049656488, 67.18298, 3, 2.4334738)
-mesh = SubResource("PlaneMesh_hlmxm")
-
 [node name="Signs" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1360169474]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1129024278]
@@ -294,6 +224,76 @@ mesh = SubResource("TextMesh_xjqlh")
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=193087829]
 transform = Transform3D(0.08402569, -0.9964636, -4.3556806e-08, 0, -4.371139e-08, 1, -0.9964636, -0.08402569, -3.6728796e-09, 62.937645, 0, 4.5867496)
 mesh = SubResource("TextMesh_xjqlh")
+
+[node name="Pathways" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=480151163]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=366317571]
+transform = Transform3D(9.994671, 0, -0.070369236, 0, 1, 0, 9.898841, 0, 0.07105048, -50.1119, 2.7230835, 10.252943)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1445692636]
+transform = Transform3D(12.100769, 0, -0.027728168, 0, 1, 0, 3.7206023, 0, 0.09018224, -27.517406, 2.7230835, 24.041218)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1419960790]
+transform = Transform3D(-9.898143, 0, -0.07105539, 0, 1, 0, 9.995362, 0, -0.070364274, -49.689445, 2.7230835, -10.236214)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1080665959]
+transform = Transform3D(-12.3752165, 0, -0.029637884, 0, 1, 0, 3.9099662, 0, -0.09380522, -26.976269, 2.7230835, -24.07242)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1461282325]
+transform = Transform3D(-11.7555, 0, 0.061254352, 0, 0.99999994, 0, -9.34706, 0, -0.077037625, -27.739323, 2.7230835, -10.26363)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=267170229]
+transform = Transform3D(12.262947, 0, 0.07366041, 0, 0.9999999, 0, -9.493961, 0, 0.09514403, -27.681885, 2.7230835, 10.760556)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1660794139]
+transform = Transform3D(-6.532495e-07, 0, 0.12032557, 0, 0.9999999, 0, -14.944607, 0, -5.2595976e-09, -15.015244, 2.7230835, 13.181186)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=257405687]
+transform = Transform3D(-6.532495e-07, 0, 0.12032557, 0, 0.9999999, 0, -14.944607, 0, -5.2595976e-09, -14.983402, 2.7230835, -13.855132)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1532835495]
+transform = Transform3D(-14.281285, 0, 0.052341834, 0, 1, 0, -7.219314, 0, -0.103542894, 0.8173561, 2.7230835, 7.8941927)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=215731271]
+transform = Transform3D(-6.532495e-07, 0, 0.12032557, 0, 0.9999999, 0, -14.944607, 0, -5.2595976e-09, 14.981714, 2.7230835, 0.5840187)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=649622931]
+transform = Transform3D(14.494663, 0, 0.058115225, 0, 0.99999964, 0, -7.2976646, 0, 0.11542879, 0.273, 3, -7.439)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=525277683]
+transform = Transform3D(9.944422, 0, 0.064666025, 0, 0.9999999, 0, -7.637244, 0, 0.08420137, 25.649, 3, 7.224)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1598430477]
+transform = Transform3D(9.951484, 0, -0.06458812, 0, 1, 0, 7.6280427, 0, 0.08426115, 24.622, 3, -7.552)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=223094861]
+transform = Transform3D(13.608707, 0, 0, 0, 1, 0, 0, 0, 0.10616764, 50.051, 3, -0.103)
+mesh = SubResource("PlaneMesh_md273")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1475034566]
+transform = Transform3D(-0.1914871, -2.448332e-09, -0.09940771, 7.063625e-10, 1, -2.5067468e-10, 1.7515639, -6.709373e-10, -0.010867589, 64.84938, 3, 2.9402752)
+mesh = SubResource("PlaneMesh_hlmxm")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=142886765]
+transform = Transform3D(1.7320166, 0, 0.018369399, 0, 0.9999996, 0, -0.32366884, 0, 0.09829834, 66.43036, 3, 4.276987)
+mesh = SubResource("PlaneMesh_hlmxm")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Pathways" unique_id=1058496889]
+transform = Transform3D(-0.87494725, 0, 0.08679994, 0, 0.9999995, 0, -1.5294149, 0, -0.049656488, 67.18298, 3, 2.4334738)
+mesh = SubResource("PlaneMesh_hlmxm")
 
 [node name="Rocket" type="Node3D" parent="SimEnvironment" unique_id=1785580816]
 

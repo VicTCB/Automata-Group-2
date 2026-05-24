@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://cws0bd3vlpgyg"]
 
-[ext_resource type="Texture2D" uid="uid://w1wf7igqo1ji" path="res://Assets/2D/DFA1/placeholderRegEx1.png" id="1_vl8gn"]
+[ext_resource type="Texture2D" uid="uid://clqqcippwi4eb" path="res://Assets/2D/DFA1/RegEx1.png" id="1_87k1f"]
 [ext_resource type="Script" uid="uid://doebako4afyvp" path="res://Scripts/DFA1/reg_ex_1.gd" id="2_87k1f"]
 [ext_resource type="PackedScene" uid="uid://cc8045aqvctug" path="res://Scenes/Others/back.tscn" id="2_mwnme"]
+[ext_resource type="Texture2D" uid="uid://cewvpycsqsrj6" path="res://Assets/2D/Others/back button white.png" id="4_c27th"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mwnme"]
-texture = ExtResource("1_vl8gn")
+texture = ExtResource("1_87k1f")
 
 [node name="RegEx1" type="Panel" unique_id=914070162]
 anchors_preset = 15
@@ -28,3 +29,4 @@ offset_right = 151.0
 offset_bottom = 74.839966
 grow_horizontal = 1
 grow_vertical = 1
+texture_normal = ExtResource("4_c27th")

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bpjtbd8tlgn4e"]
 
-[ext_resource type="Texture2D" uid="uid://h8601gxjgm3c" path="res://Assets/2D/MainMenu/placeholderMainMenu.png" id="1_aur2u"]
+[ext_resource type="Texture2D" uid="uid://kgrhqny0bcep" path="res://Assets/2D/MainMenu/MainMenu.png" id="1_aur2u"]
 [ext_resource type="Script" uid="uid://ollpvcupnggb" path="res://Scripts/Menus/main_menu.gd" id="2_5wi6m"]
-[ext_resource type="Texture2D" uid="uid://61mha7q2hc8n" path="res://Assets/2D/MainMenu/placeholderPlay.png" id="3_chkef"]
-[ext_resource type="Texture2D" uid="uid://hbbcsolf5dms" path="res://Assets/2D/MainMenu/placeholderExit.png" id="4_neey8"]
+[ext_resource type="Texture2D" uid="uid://cgked1mcmnjpg" path="res://Assets/2D/MainMenu/board station.png" id="3_5wi6m"]
+[ext_resource type="Texture2D" uid="uid://o7enf3exwewk" path="res://Assets/2D/MainMenu/sign off button.png" id="4_chkef"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v763k"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_neey8"]
 texture = ExtResource("1_aur2u")
 
 [node name="MainMenuBG" type="Panel" unique_id=302614901]
@@ -14,40 +14,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_v763k")
+theme_override_styles/panel = SubResource("StyleBoxTexture_neey8")
 script = ExtResource("2_5wi6m")
 
 [node name="BoardStation" type="TextureButton" parent="." unique_id=785721556]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -153.77783
-offset_top = -86.5
-offset_right = 153.77783
-offset_bottom = 86.5
+anchors_preset = -1
+anchor_left = 0.679
+anchor_top = 0.497
+anchor_right = 0.679
+anchor_bottom = 0.497
+offset_left = -153.68005
+offset_top = -86.76001
+offset_right = 153.87561
+offset_bottom = 86.23999
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_chkef")
+texture_normal = ExtResource("3_5wi6m")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="SignOff" type="TextureButton" parent="." unique_id=604549798]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.74200004
-anchor_right = 0.5
-anchor_bottom = 0.74200004
-offset_left = -154.0
-offset_top = -88.36005
-offset_right = 158.88892
-offset_bottom = 87.63995
+anchor_left = 0.68
+anchor_top = 0.637
+anchor_right = 0.68
+anchor_bottom = 0.637
+offset_left = -155.59998
+offset_top = -87.96002
+offset_right = 157.28894
+offset_bottom = 88.03998
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("4_neey8")
+texture_normal = ExtResource("4_chkef")
 ignore_texture_size = true
 stretch_mode = 0
 

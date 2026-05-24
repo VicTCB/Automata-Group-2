@@ -14,8 +14,8 @@
 [ext_resource type="Script" uid="uid://dwpgvxj7vtrnb" path="res://Scripts/ControlRoom/ControlPanel/enter_coordinates.gd" id="9_1svk1"]
 [ext_resource type="Script" uid="uid://c2tyv78q8yn5g" path="res://Scripts/ControlRoom/ControlPanel/change_file.gd" id="9_6ewnu"]
 [ext_resource type="Script" uid="uid://dju4y7fe61kdc" path="res://Scripts/ControlRoom/DisplayScreen/display_screen.gd" id="10_tv4ge"]
-[ext_resource type="Texture2D" uid="uid://bh6vmrlxym1ei" path="res://Assets/2D/DFA1/placeholderDFA1.png" id="11_1trhs"]
-[ext_resource type="Texture2D" uid="uid://dxvcbtcopux84" path="res://Assets/2D/DFA2/placeholderDFA2.png" id="12_1svk1"]
+[ext_resource type="Texture2D" uid="uid://be1loivwp8e43" path="res://Assets/2D/DFA1/DFA1.png" id="12_3jca2"]
+[ext_resource type="Texture2D" uid="uid://bwbm885frwwax" path="res://Assets/2D/DFA2/DFA2.png" id="14_wqvci"]
 [ext_resource type="Script" uid="uid://bu6n8kiada7aq" path="res://Scripts/ControlRoom/Monitor2/monitor2.gd" id="15_xn3gm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7ta0"]
@@ -50,6 +50,9 @@ script = ExtResource("1_3jca2")
 transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 6.2215004, 1.163175, -2.3026035)
 
 [node name="TheRoom" type="Node3D" parent="." unique_id=1995576966]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TheRoom" unique_id=1528182332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5103841, -2)
 
 [node name="Structure" type="Node3D" parent="TheRoom" unique_id=1293796367]
 
@@ -106,9 +109,6 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 4, 3
 [node name="Floor8" parent="TheRoom/Structure/Roof" unique_id=1273636130 instance=ExtResource("2_36tfi")]
 transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 6, 3, -4.1)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TheRoom" unique_id=1528182332]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5103841, -2)
-
 [node name="ControlPanel" type="Node3D" parent="TheRoom" unique_id=976054096]
 
 [node name="Table" type="Node3D" parent="TheRoom/ControlPanel" unique_id=1550173200]
@@ -149,11 +149,11 @@ shape = SubResource("BoxShape3D_tv4ge")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="TheRoom/GiantScreen" unique_id=1637358059 groups=["DisplayScreen"]]
-transform = Transform3D(-6.9504233e-09, 0, 0.1, 0, 0.113587774, 0, -0.15900716, 0, -4.371139e-09, 0.13571048, 1.9160886, -2.0013428)
-texture = ExtResource("11_1trhs")
+transform = Transform3D(-1.1678079e-08, 0, 0.1, 0, 0.25770932, 0, -0.26716334, 0, -4.371139e-09, 0.13571048, 1.9160886, -1.9962866)
+texture = ExtResource("12_3jca2")
 script = ExtResource("10_tv4ge")
-dfa1_texture = ExtResource("11_1trhs")
-dfa2_texture = ExtResource("12_1svk1")
+dfa1_texture = ExtResource("12_3jca2")
+dfa2_texture = ExtResource("14_wqvci")
 
 [node name="Monitor2" type="Node3D" parent="TheRoom" unique_id=1343141726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0112507, 1.5981026, -4.003776)

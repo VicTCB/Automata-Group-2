@@ -25,7 +25,9 @@ func _physics_process(delta):
 	if Global.in_menu:
 		interact_label.hide()
 		return
-		
+	if get_viewport().get_camera_3d() != camera:
+		interact_label.hide()
+		return
 	# NEW: Check what the raycast is looking at every single frame
 	update_hover_text()
 	

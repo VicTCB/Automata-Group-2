@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dglv6lqgb7ihe" path="res://Assets/3D/Use_This/planet_2.tscn" id="4_5cf66"]
 [ext_resource type="PackedScene" uid="uid://b5nia4ds2cqda" path="res://Assets/3D/Use_This/star.tscn" id="4_j1aes"]
 [ext_resource type="PackedScene" uid="uid://cdxq3xs3htpma" path="res://Assets/3D/Use_This/station.tscn" id="4_j4fjh"]
+[ext_resource type="PackedScene" uid="uid://oujlrw7arkn4" path="res://Assets/3D/Use_This/planet_1.tscn" id="6_elfa4"]
 [ext_resource type="PackedScene" uid="uid://2e2cp2fnao5h" path="res://Assets/3D/Use_This/planet_3.tscn" id="6_j1aes"]
 [ext_resource type="FontFile" uid="uid://bb3pu8sygsqum" path="res://Assets/2D/Fonts/Nasalization Rg.otf" id="8_j4fjh"]
 
@@ -103,7 +104,7 @@ transform = Transform3D(14.910758, 0, -1.6337838, 0, 14.999999, 0, 1.6337838, 0,
 [node name="Q2" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=167757804]
 transform = Transform3D(0.7326663, 0.51116014, -0.4493501, 0.28095454, 0.37419632, 0.88376564, 0.61989087, -0.77375215, 0.13054825, -30, 3, -15)
 
-[node name="Planet2" parent="SimEnvironment/StateNodes/Q2" unique_id=1983133354 instance=ExtResource("4_5cf66")]
+[node name="Planet1" parent="SimEnvironment/StateNodes/Q2" unique_id=238815096 instance=ExtResource("6_elfa4")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="Q3" type="Node3D" parent="SimEnvironment/StateNodes" unique_id=1661007117]

@@ -2,7 +2,7 @@ extends Panel
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
+	Global.in_menu = true
 func _on_show_pda_pressed() -> void:
 	var scene
 	if Global.active_dfa == 1:
@@ -28,3 +28,6 @@ func _on_show_reg_ex_pressed() -> void:
 	else:
 		scene = load("res://Scenes/DFA2/reg_ex_2.tscn").instantiate()
 	get_tree().root.add_child(scene)
+
+func _exit_tree():
+	Global.in_menu = false
