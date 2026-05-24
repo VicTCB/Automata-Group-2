@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://2e2cp2fnao5h" path="res://Assets/3D/Use_This/planet_3.tscn" id="4_4xp6a"]
 [ext_resource type="PackedScene" uid="uid://dglv6lqgb7ihe" path="res://Assets/3D/Use_This/planet_2.tscn" id="4_md273"]
 [ext_resource type="FontFile" uid="uid://bb3pu8sygsqum" path="res://Assets/2D/Fonts/Nasalization Rg.otf" id="7_vummb"]
+[ext_resource type="PackedScene" uid="uid://dnn45kt6dssqw" path="res://Assets/3D/Use_This/THE_SUN.tscn" id="10_ln4yb"]
+[ext_resource type="AudioStream" uid="uid://cw53f030vecfm" path="res://Assets/Audio/Victory Music - Sound Effect for editing.mp3" id="11_vqr0d"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ounok"]
 panorama = ExtResource("1_k8g5f")
@@ -194,7 +196,7 @@ transform = Transform3D(0.78525203, 0.6191762, 2.7065056e-08, 3.6286256e-15, -4.
 mesh = SubResource("TextMesh_vummb")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1863187421]
-transform = Transform3D(0.95214534, -0.30564544, -1.3360188e-08, 0, -4.371139e-08, 1, -0.30564544, -0.95214534, -4.1619597e-08, -25.724394, 0, -22.620764)
+transform = Transform3D(0.95214534, -0.30564544, -1.3360188e-08, 0, -4.371139e-08, 1, -0.30564544, -0.95214534, -4.1619597e-08, -25.59807, 0, -22.2418)
 mesh = SubResource("TextMesh_ln4yb")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1544028606]
@@ -202,11 +204,11 @@ transform = Transform3D(0.9513796, 0.30802095, 1.34640255e-08, 0, -4.371139e-08,
 mesh = SubResource("TextMesh_vqr0d")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1729135750]
-transform = Transform3D(-4.3711385e-08, -0.99999994, -4.371139e-08, 0, -4.3711385e-08, 1, -0.99999994, 4.3711385e-08, 1.9106855e-15, -16.67131, 0, 13.818758)
+transform = Transform3D(-4.3711385e-08, -0.99999994, -4.371139e-08, 0, -4.3711385e-08, 1, -0.99999994, 4.3711385e-08, 1.9106855e-15, -17.138931, 0, 13.818758)
 mesh = SubResource("TextMesh_w7l8y")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1952323789]
-transform = Transform3D(-4.3711385e-08, 0.99999994, 4.371139e-08, 0, -4.3711385e-08, 1, 0.99999994, 4.3711385e-08, 1.9106855e-15, -16.587572, 0, -16.82949)
+transform = Transform3D(-4.3711385e-08, 0.99999994, 4.371139e-08, 0, -4.3711385e-08, 1, 0.99999994, 4.3711385e-08, 1.9106855e-15, -17.598143, 0, -16.82949)
 mesh = SubResource("TextMesh_wfp8l")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="SimEnvironment/StateNodes/Signs" unique_id=1599634099]
@@ -302,3 +304,9 @@ transform = Transform3D(10, 0, 0, 0, 7.610403, 6.4870453, 0, -6.4870453, 7.61040
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SimEnvironment" unique_id=2056413757]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 101.377144, 0)
+
+[node name="Sun" parent="SimEnvironment" unique_id=92245845 instance=ExtResource("10_ln4yb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 29.711319, 0, -36.061447)
+
+[node name="SuccessSound" type="AudioStreamPlayer3D" parent="SimEnvironment" unique_id=1512315978]
+stream = ExtResource("11_vqr0d")

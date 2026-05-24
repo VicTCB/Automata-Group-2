@@ -34,6 +34,8 @@ const STATE_POSITIONS = {
 @onready var rocket = $SimEnvironment/Rocket
 @onready var sim_camera = $SimEnvironment/SimulationCamera
 @onready var state_nodes_folder = $SimEnvironment/StateNodes
+var explosion_scene = preload("res://Assets/3D/Use_This/explosion.tscn") # Make sure this path matches your folder!
+@onready var success_audio = $SimEnvironment/SuccessSound
 
 # --- SIMULATION VARIABLES ---
 var state_path = []
@@ -58,10 +60,11 @@ func run_current_string():
 	print("Simulating string: ", current_input_string)
 	print("Path taken: ", state_path)
 
-	# Teleport to start
+	# --- NEW: Bring the rocket back to life! ---
+	rocket.show()
+	
 	rocket.position = STATE_POSITIONS[state_path[0]] + HOVER_OFFSET
 
-	# Wait 1 second before moving
 	await get_tree().create_timer(1.0).timeout
 	animate_rocket()
 
@@ -106,10 +109,12 @@ func _on_simulation_finished():
 	
 	if final_state in ACCEPT_STATES:
 		print("RESULT: STRING ACCEPTED!")
+		success_audio.play() # <--- PLAY THE AUDIO!
 	else:
 		print("RESULT: STRING REJECTED!")
+		trigger_explosion() # <--- SPAWN THE EXPLOSION!
 
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	_move_to_next_string()
 
 func _move_to_next_string():
@@ -120,3 +125,17 @@ func _move_to_next_string():
 	else:
 		print("Simulation complete! Returning control.")
 		queue_free()
+
+func trigger_explosion():
+	# 1. Spawn the explosion scene
+	var boom = explosion_scene.instantiate()
+	$SimEnvironment.add_child(boom)
+	
+	# 2. Snap it to the rocket's exact position
+	boom.global_position = rocket.global_position
+	
+	# 3. Hide the rocket so it looks like it blew up
+	rocket.hide()
+	
+	# Note: We don't need to tell it to play or queue_free anymore! 
+	# The Explosion's own _ready() function handles all of that now.

@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://oujlrw7arkn4" path="res://Assets/3D/Use_This/planet_1.tscn" id="6_elfa4"]
 [ext_resource type="PackedScene" uid="uid://2e2cp2fnao5h" path="res://Assets/3D/Use_This/planet_3.tscn" id="6_j1aes"]
 [ext_resource type="FontFile" uid="uid://bb3pu8sygsqum" path="res://Assets/2D/Fonts/Nasalization Rg.otf" id="8_j4fjh"]
+[ext_resource type="PackedScene" uid="uid://dnn45kt6dssqw" path="res://Assets/3D/Use_This/THE_SUN.tscn" id="10_gy4io"]
+[ext_resource type="AudioStream" uid="uid://cw53f030vecfm" path="res://Assets/Audio/Victory Music - Sound Effect for editing.mp3" id="11_gv3tg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1juvt"]
 panorama = ExtResource("2_mp61a")
@@ -274,3 +276,9 @@ mesh = SubResource("TextMesh_gv3tg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SimEnvironment" unique_id=1268836485]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 100, 0)
+
+[node name="Sun" parent="SimEnvironment" unique_id=2130693585 instance=ExtResource("10_gy4io")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -19.447124, 0, 14.082397)
+
+[node name="SuccessSound" type="AudioStreamPlayer3D" parent="SimEnvironment" unique_id=1111939065]
+stream = ExtResource("11_gv3tg")

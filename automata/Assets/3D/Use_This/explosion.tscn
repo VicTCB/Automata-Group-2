@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dnsqw7aaxt0kq"]
 
 [ext_resource type="PackedScene" uid="uid://c8jwh1wnunbr0" path="res://Assets/3D/Models/Raw_Model/Explosion.fbx" id="1_3s0t0"]
+[ext_resource type="Script" uid="uid://c6054rx3b6rnr" path="res://Scripts/Others/explosion.gd" id="2_y0j1l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3s0t0"]
 albedo_color = Color(0.80931324, 0.13818681, 0, 1)
@@ -119,12 +120,21 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jvgh4")
 
 [node name="Explosion" unique_id=197896999 instance=ExtResource("1_3s0t0")]
+script = ExtResource("2_y0j1l")
 
-[node name="pSphere1" parent="Explostion" parent_id_path=PackedInt32Array(133816509) index="0" unique_id=1897625843]
+[node name="Explostion" parent="." index="0" unique_id=1935086250]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 5, 0)
+
+[node name="pSphere1" parent="Explostion" index="0" unique_id=1538713077]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_y0j1l")
 
-[node name="pSuperShape4" parent="Explostion" parent_id_path=PackedInt32Array(133816509) index="1" unique_id=993393497]
+[node name="pSuperShape4" parent="Explostion" index="1" unique_id=1642808389]
+transform = Transform3D(0.32119846, 0, 0, 0, 0.32119846, 0, 0, 0, 0.32119846, -0.02417859, 0, 0)
 mesh = SubResource("ArrayMesh_f2eff")
 
-[node name="pSphere2" parent="Explostion" parent_id_path=PackedInt32Array(133816509) index="2" unique_id=997769566]
+[node name="pSphere2" parent="Explostion" index="2" unique_id=475116645]
 mesh = SubResource("ArrayMesh_00rg4")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=540542486]
+autoplay = &"Take 001"
