@@ -13,7 +13,7 @@ const TRANSITIONS = {
 	"Q7": {"a": "Q8", "b": "Q8"},
 	"Q8": {"a": "Q8", "b": "Q8"}
 }
-const HOVER_OFFSET = Vector3(0, 3, 0)
+const HOVER_OFFSET = Vector3(0, 7, 0)
 const ACCEPT_STATES = ["Q8"]
 const START_STATE = "Q0"
 
