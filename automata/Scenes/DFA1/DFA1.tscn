@@ -282,3 +282,4 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -19.447124, 0, 14.082397)
 
 [node name="SuccessSound" type="AudioStreamPlayer3D" parent="SimEnvironment" unique_id=1111939065]
 stream = ExtResource("11_gv3tg")
+volume_db = 30.0

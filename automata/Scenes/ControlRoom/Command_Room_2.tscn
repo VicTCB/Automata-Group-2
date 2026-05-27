@@ -47,7 +47,7 @@ script = ExtResource("1_3jca2")
 [node name="PauseMenu" parent="." unique_id=2070655998 instance=ExtResource("1_5s4rx")]
 
 [node name="User" parent="." unique_id=1947249384 instance=ExtResource("8_36tfi")]
-transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 6.2215004, 1.163175, -2.3026035)
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 6.2215004, 1.163175, -1.2961133)
 
 [node name="TheRoom" type="Node3D" parent="." unique_id=1995576966]
 
